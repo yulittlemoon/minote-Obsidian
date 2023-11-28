@@ -61,7 +61,8 @@ def create_unique_filename(title, note_id, save_dir,noteID):
 def save_as_markdown(note, data, save_dir,noteId):
     note_id = note.get('id')
     title, content = data
-    content = content.replace('<text indent="1">', '').replace('</text>', '').replace('\n', '\n').replace('<b>','**').replace('</b>','**').replace('<background color="#9affe8af">','').replace('</background>','')
+    content = content.replace('<text indent="1">', '').replace('</text>', '').replace('\n', '\n').replace('<b>','**').replace('</b>','**')\
+        .replace('<background color="#9affe8af">','<span style="background-color: rgba(98,0,238,0.06)>').replace('</background>','</span>')
     # 如果标题为空，从内容中提取前30个字符作为标题
     if not title:
         title = content[:30].strip()  # 从内容中提取前30个字符并去除前后空白
