@@ -93,11 +93,8 @@ def main():
             noteId.append(note_id)
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("MINOTE_COOKIE")
-    options = parser.parse_args()
     MINOTE_COOKIE = os.environ.get('MINOTE_COOKIE')
-
+    print(MINOTE_COOKIE)
     if os.path.exists('data.txt') and os.path.getsize('data.txt') > 0:
         with open('data.txt', 'r') as file:
             noteIdStr = file.read()
