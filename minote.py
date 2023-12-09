@@ -5,11 +5,7 @@ from urllib.parse import unquote
 import argparse
 
 # 配置
-#MINOTE_COOKIE = os.environ.get('MINOTE_COOKIE')  # 从环境变量获取
-
 SAVE_DIR = 'D:\输出义务\minote'  # 本地存储目录
-MINOTE_COOKIE = os.getenv('MINOTE_COOKIE')
-
 # 小米云服务笔记 API URL
 API_URL = 'https://i.mi.com/note/full/page/'
 counter=1
@@ -82,19 +78,22 @@ def main():
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
-    notes = get_notes(MINOTE_COOKIE)
+    notes = get_notes(minote_cookie)
     for note in notes:
         note_id = note.get('id')
         noteId_str = ', '.join(map(str, noteId))
         with open('data.txt', 'w') as file:
             file.write(noteId_str)
-        content = get_note_content(note_id, MINOTE_COOKIE)
+        content = get_note_content(note_id, minote_cookie)
         save_as_markdown(note, content, save_dir,noteId)
         if note_id not in noteId:
             noteId.append(note_id)
 
 if __name__ == "__main__":
-    print(MINOTE_COOKIE)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("minote_cookie")
+    options = parser.parse_args()
+    minote_cookie = options.minote_cookie
     if os.path.exists('data.txt') and os.path.getsize('data.txt') > 0:
         with open('data.txt', 'r') as file:
             noteIdStr = file.read()
