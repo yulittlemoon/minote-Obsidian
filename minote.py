@@ -3,7 +3,8 @@ import os
 import json
 from urllib.parse import unquote
 import argparse
-SAVE_DIR=''
+
+global save_dir
 # 小米云服务笔记 API URL
 API_URL = 'https://i.mi.com/note/full/page/'
 counter=1
@@ -72,7 +73,6 @@ def save_as_markdown(note, data, save_dir,noteId):
         file.write(markdown_text)
 
 def main():
-    save_dir = SAVE_DIR
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
 
@@ -90,10 +90,10 @@ def main():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("minote_cookie")
-    parser.add_argument("SAVE_DIR")
+    parser.add_argument("save_dir")
     options = parser.parse_args()
     minote_cookie = options.minote_cookie
-    SAVE_DIR=options.SAVE_DIR
+    save_dir=options.save_dir
     if os.path.exists('data.txt') and os.path.getsize('data.txt') > 0:
         with open('data.txt', 'r') as file:
             noteIdStr = file.read()
