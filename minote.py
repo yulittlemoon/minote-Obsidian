@@ -94,6 +94,7 @@ if __name__ == "__main__":
     parser.add_argument("minote_cookie")
     options = parser.parse_args()
     minote_cookie = options.minote_cookie
+    print(minote_cookie)
     if os.path.exists('data.txt') and os.path.getsize('data.txt') > 0:
         with open('data.txt', 'r') as file:
             noteIdStr = file.read()
