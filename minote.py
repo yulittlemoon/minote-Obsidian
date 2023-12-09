@@ -8,6 +8,7 @@ import argparse
 #MINOTE_COOKIE = os.environ.get('MINOTE_COOKIE')  # 从环境变量获取
 
 SAVE_DIR = 'D:\输出义务\minote'  # 本地存储目录
+MINOTE_COOKIE = os.getenv('MINOTE_COOKIE')
 
 # 小米云服务笔记 API URL
 API_URL = 'https://i.mi.com/note/full/page/'
@@ -93,7 +94,6 @@ def main():
             noteId.append(note_id)
 
 if __name__ == "__main__":
-    MINOTE_COOKIE = os.environ.get('MINOTE_COOKIE')
     print(MINOTE_COOKIE)
     if os.path.exists('data.txt') and os.path.getsize('data.txt') > 0:
         with open('data.txt', 'r') as file:
