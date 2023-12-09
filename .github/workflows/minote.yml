@@ -22,4 +22,4 @@ jobs:
           pip install -r requirements.txt
       - name: minote sync
         run: |
-          python minote.py "${{secrets.MINOTE_COOKIE}}"
+          python minote.py "${{secrets.MINOTE_COOKIE}}""${{secrets.SAVE_DIR}}"

@@ -3,9 +3,7 @@ import os
 import json
 from urllib.parse import unquote
 import argparse
-
-# 配置
-SAVE_DIR = 'D:\输出义务\minote'  # 本地存储目录
+SAVE_DIR=''
 # 小米云服务笔记 API URL
 API_URL = 'https://i.mi.com/note/full/page/'
 counter=1
@@ -92,9 +90,10 @@ def main():
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("minote_cookie")
+    parser.add_argument("SAVE_DIR")
     options = parser.parse_args()
     minote_cookie = options.minote_cookie
-    print(minote_cookie)
+    SAVE_DIR=options.SAVE_DIR
     if os.path.exists('data.txt') and os.path.getsize('data.txt') > 0:
         with open('data.txt', 'r') as file:
             noteIdStr = file.read()
