@@ -1,6 +1,5 @@
 带图片完整使用说明：[https://juejin.cn/spost/7427399875236855871](https://juejin.cn/spost/7427399875236855871) "同步小米笔记到电脑本地文件夹中"
 
-该项目灵感来源([https://github.com/malinkang/weread2notion](https://github.com/malinkang/weread2notion) "将微信读书划线和笔记同步到Notion")
 ## 将小米笔记内容同步到obdisian
 ### 项目介绍
 目前手机上使用的是小米笔记，非常喜欢小米笔记的摘录功能，电脑里使用ondisian整理所有的笔记，因此该项目主要功能是将小米笔记全部内容同步obsidian中
