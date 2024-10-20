@@ -1,4 +1,4 @@
-Tip：目前项目存在问题是：小米笔记cookie容易过期，没办法实现自动同步，作者最近在忙期末考试，等之后会想办法解决
+Tip：目前项目存在问题是：小米笔记cookie容易过期，可以一次直接同步到电脑中，但没办法实现自动同步
 ——2023/12/15
 
 该项目灵感来源([https://github.com/malinkang/weread2notion](https://github.com/malinkang/weread2notion) "将微信读书划线和笔记同步到Notion")
