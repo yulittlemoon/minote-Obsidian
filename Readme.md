@@ -1,5 +1,4 @@
-Tip：目前项目存在问题是：小米笔记cookie容易过期，可以一次直接同步到电脑中，但没办法实现自动同步
-——2023/12/15
+带图片完整使用说明：[https://juejin.cn/spost/7427399875236855871](https://juejin.cn/spost/7427399875236855871) "同步小米笔记到电脑本地文件夹中"
 
 该项目灵感来源([https://github.com/malinkang/weread2notion](https://github.com/malinkang/weread2notion) "将微信读书划线和笔记同步到Notion")
 ## 将小米笔记内容同步到obdisian
@@ -21,3 +20,6 @@ Tip：目前项目存在问题是：小米笔记cookie容易过期，可以一�
    - 添加以下变量
      - MINOTE_COOKIE
      - SAVE_DIR
+6. 手动运行githubAction
+   - 点击Action->minote sync->Run workflow -> Run workflow按钮
+   - 观察运行状态，如果为绿色则运行成功，此时可以在设定好的本地文件夹中看到同步的笔记内容
